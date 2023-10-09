@@ -1,6 +1,6 @@
 const express = require(`express`);
 const fs = require(`fs`);
-const { auth } = require(`./auth.json`)
+const { auth } = require(`./auth.json`);
 const d = new Date()
 const app = express();
 const port = 3000;
@@ -12,6 +12,10 @@ function objToString(obj) {
         return `${p} ${val}`; // return `${p}${val}` for first and second arg
     }, '');
 };
+
+if (!`./files`) {
+    mkdir(`./files`)
+}
 
 app.post('/upload', (req, res) => {
     const month = d.getMonth() + 1
