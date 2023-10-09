@@ -13,9 +13,6 @@ function objToString(obj) {
     }, '');
 };
 
-if (!`./files`) {
-    mkdir(`./files`)
-}
 
 app.post('/upload', (req, res) => {
     const month = d.getMonth() + 1
