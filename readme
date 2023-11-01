@@ -1,9 +1,11 @@
 to use
 
-install these dependancies using this command!
+install the dependancies using this command!
 
 npm i express fs
 
 to run the server
 
 node ./server.js
+
+remember to set the key in auth.json!
