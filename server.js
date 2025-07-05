@@ -248,22 +248,6 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.get(`/text`, (req, res) => {
-    res.send(`You shouldn't be here..`);
-});
-
-app.get(`/media`, (req, res) => {
-    res.send(`You shouldn't be here..`);
-});
-
-app.get(`/file`, (req, res) => {
-    res.send(`You shouldn't be here..`);
-});
-
-app.get(`/`, (req, res) => {
-    res.send(`You shouldn't be here..`);
-});
-
 app.listen(port, () => {
     checksrc()
     console.log(`Server up and running on port ${port}!`);
