@@ -5,7 +5,7 @@
 ## Steps to setup folders:
 ### Make a "files" folder
 ### Add folders "file", "media" and "text"
-### Fill out auth.json to your liking
+### Fill out cfg.json to your liking
 
 ### This project is ShareX compatible, to use it with sharex just set the url parameters to secret with the secret value, the url with your url/[file,media,text], the method as POST, the body as Binary and the content type as application/json.
 
