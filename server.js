@@ -1,7 +1,7 @@
 const express = require(`express`);
 const path = require(`path`);
 const fs = require(`fs`);
-const { secret, link } = require(`./auth.json`)
+const { name, text, secret, link } = require(`./auth.json`)
 const d = new Date()
 const app = express();
 const port = 225;
