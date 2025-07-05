@@ -80,8 +80,8 @@ app.post(`/text`, (req, res) => {
 <html>
 
     <head>
-        <title>filehost</title>
-        <meta content="fart host" property="og:title" />
+        <title>${name}</title>
+        <meta content="${name}" property="og:title" />
         <meta content="${text}" property="og:description" />
         <meta content="${link}" property="og:url" />
         <meta content="#09090b" data-react-helmet="true" name="theme-color" />
@@ -137,9 +137,9 @@ app.post(`/media`, (req, res) => {
 <html>
 
     <head>
-        <title>filehost</title>
-        <meta content="fart host" property="og:title" />
-        <meta content="fish are the loneliest pet" property="og:description" />
+        <title>${name}</title>
+        <meta content="${name}" property="og:title" />
+        <meta content="${text}" property="og:description" />
         <meta content="${link}" property="og:url" />
         <meta content="#09090b" data-react-helmet="true" name="theme-color" />
         <meta charset="UTF-8">
@@ -194,49 +194,16 @@ app.post(`/file`, (req, res) => {
     const data = body.data
     const x = data.map(n => String.fromCharCode(n)).join(``)
     const buf = new Buffer(x, `binary`);
-    const mp4 = `./files/file/${r}.mp4`
-    const html = `./files/file/${r}.html`
-    const code = `<!DOCTYPE html>
-    <html>
-        <head>
-            <title>filehost</title>
-            <meta content="fart host" property="og:title" />
-            <meta property="og:url" content="${link}/file/${r}.mp4">
-            <meta content="#09090b" data-react-helmet="true" name="theme-color" />
-            <meta charset="UTF-8">
-            <meta name="robots" content="noindex">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta property="og:video" content="${link}/file/${r}.mp4" />
-	    <meta property="og:type" content="video">
-	    <meta property="og:video:type" content="video">
-	    <meta http-equiv="refresh" content="0; url='${link}/file/${r}.mp4'">
-        </head>
-        <style>
-            body {
-                background-color: #09090b;
-            }
-        </style>
-    </html>`
+    const bin = `./files/file/${r}.bin`
     if (req.query.secret == secret) {
-        fs.appendFile(mp4, buf, err => {
+        fs.appendFile(bin, buf, err => {
             if (err) {
                 console.error(err);
             }
             else {
-                console.log(`Written video to ${mp4}`);
+                console.log(`Written file to ${bin}`);
             }
         })
-        fs.appendFile(html, code, err => {
-            if (err) {
-                console.error(err);
-            }
-            else {
-                res.status(200);
-                res.send(`${link}/file/${r}.html`);
-                console.log(`Written video to ${html}`);
-            }
-        });
     }
     else {
         console.log(`Someone tried to use your api! Luckily, the protection system stopped the request and sent them a 403 before he could do anything.`)
