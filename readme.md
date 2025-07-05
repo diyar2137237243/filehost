@@ -3,7 +3,7 @@
 ## Install expressJS (if you don't know how, this isn't for you.)
 
 ## Steps to setup folders:
-### Make a "files" folder
+### Make a "files" folder in the same dir as server.js
 ### Add folders "file", "media" and "text"
 ### Fill out cfg.json to your liking
 
