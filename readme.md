@@ -11,4 +11,5 @@
 
 ### To run the server, run yarn start
 ## Help out by starring this project, and contributing to the project, for any questions please dm me on discord @.diyara3 or open an issue.
+### I also have a website running this: https://diyara3.space -- I sometimes post funny stuff here so excuse me.
 ### Credits: myself
